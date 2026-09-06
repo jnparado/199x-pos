@@ -183,7 +183,7 @@ export default function PosPage() {
             ) : (
               <>
                 <h3 className="text-xl font-semibold">Pay {money(totals.due)}</h3>
-                <div className="mt-3 grid grid-cols-5 gap-2">
+                <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-5">
                   {(["cash", "card", "gcash", "maya", "bank"] as const).map((item) => (
                     <button
                       key={item}

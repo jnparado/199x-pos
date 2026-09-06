@@ -6,7 +6,7 @@
   --kada-green: #22c55e;
   --kada-blue: #2563eb;
   --kada-red: #ef4444;
-  --kada-yellow: #f5c518;
+  --kada-yellow: #d4af37;
   --kada-orange: #f59e0b;
   --panel: #0a0a0a;
   --panel-2: #111111;
@@ -21,17 +21,28 @@
   --color-kada-yellow: var(--kada-yellow);
   --color-kada-orange: var(--kada-orange);
   --font-sans: var(--font-montserrat);
-  --font-script: var(--font-pacifico);
+  --font-script: var(--font-playfair);
   --font-mono: var(--font-geist-mono);
 }
 
 html,
 body {
   height: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 html {
   -webkit-tap-highlight-color: transparent;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -61,5 +72,5 @@ body {
 }
 
 .font-script {
-  font-family: var(--font-script), cursive;
+  font-family: var(--font-script), "Times New Roman", serif;
 }

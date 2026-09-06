@@ -39,7 +39,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
         <div className="border-b border-white/10 px-4 py-4">
           <Logo size="nav" />
           <p className="font-script mt-2 text-center text-lg text-kada-yellow">
-            Kadayawan
+            Coffee+Bar
           </p>
           <p className="text-center text-[11px] font-bold uppercase tracking-[0.18em] text-kada-green">
             August 2026
@@ -66,12 +66,33 @@ export function Shell({ children }: { children: React.ReactNode }) {
       </aside>
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="flex flex-col gap-3 border-b border-white/10 bg-black/80 px-4 py-3 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-2 md:hidden">
-            <Logo size="mark" />
-            <span className="font-script text-kada-yellow">Kadayawan</span>
+        <header className="flex flex-col gap-2 border-b border-white/10 bg-black/80 px-3 py-2.5 pt-[max(0.65rem,env(safe-area-inset-top))] sm:px-4 sm:py-3 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex min-w-0 items-center gap-2 md:hidden">
+              <Logo size="mark" />
+              <span className="font-script truncate text-kada-yellow">Coffee+Bar</span>
+            </div>
+            <p className="hidden text-sm font-medium text-zinc-400 lg:block">
+              {state?.venue.city || "Davao City"}
+              {busy ? " · Saving…" : ""}
+            </p>
+            <div className="flex items-center gap-2">
+              <span className="hidden text-sm text-zinc-300 sm:inline">
+                {user ? `User: ${user.name}` : "Guest"}
+              </span>
+              <button
+                type="button"
+                onClick={() => {
+                  logout();
+                  router.push("/login");
+                }}
+                className="h-9 rounded-xl border border-kada-red/50 px-3 text-sm font-semibold text-kada-red"
+              >
+                Logout
+              </button>
+            </div>
           </div>
-          <div className="flex gap-2 overflow-x-auto md:hidden">
+          <div className="no-scrollbar -mx-3 flex gap-2 overflow-x-auto px-3 md:hidden">
             {NAV.map((item) => (
               <Link
                 key={item.href}
@@ -86,30 +107,11 @@ export function Shell({ children }: { children: React.ReactNode }) {
               </Link>
             ))}
           </div>
-          <p className="hidden text-sm font-medium text-zinc-400 lg:block">
-            {state?.venue.city || "Davao City"}
-            {busy ? " · Saving…" : ""}
-          </p>
-          <div className="flex items-center gap-2">
-            <span className="hidden text-sm text-zinc-300 sm:inline">
-              {user ? `User: ${user.name}` : "Guest"}
-            </span>
-            <button
-              type="button"
-              onClick={() => {
-                logout();
-                router.push("/login");
-              }}
-              className="h-9 rounded-xl border border-kada-red/50 px-3 text-sm font-semibold text-kada-red"
-            >
-              Logout
-            </button>
-          </div>
         </header>
         {error ? (
           <div className="bg-kada-red/15 px-4 py-2 text-sm text-red-100">{error}</div>
         ) : null}
-        <div className="min-h-0 flex-1 overflow-auto">{children}</div>
+        <div className="min-h-0 flex-1 overflow-auto pb-[env(safe-area-inset-bottom)]">{children}</div>
       </div>
     </div>
   );

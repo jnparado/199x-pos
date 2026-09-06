@@ -23,9 +23,9 @@ export async function GET(request: Request) {
       <key>Label</key>
       <string>199X POS</string>
       <key>PayloadDescription</key>
-      <string>Adds 199X Kadayawan POS to the Home Screen</string>
+      <string>Adds 199X Coffee+Bar POS to the Home Screen</string>
       <key>PayloadDisplayName</key>
-      <string>199X Kadayawan POS</string>
+      <string>199X Coffee+Bar POS</string>
       <key>PayloadIdentifier</key>
       <string>ph.kadayawan.199x.webclip</string>
       <key>PayloadType</key>
@@ -41,11 +41,11 @@ export async function GET(request: Request) {
     </dict>
   </array>
   <key>PayloadDisplayName</key>
-  <string>199X Kadayawan POS</string>
+  <string>199X Coffee+Bar POS</string>
   <key>PayloadIdentifier</key>
   <string>ph.kadayawan.199x</string>
   <key>PayloadOrganization</key>
-  <string>199X Kadayawan</string>
+  <string>199X Coffee+Bar</string>
   <key>PayloadRemovalDisallowed</key>
   <false/>
   <key>PayloadType</key>
@@ -60,7 +60,7 @@ export async function GET(request: Request) {
   return new Response(profile, {
     headers: {
       "Content-Type": "application/x-apple-aspen-config; charset=utf-8",
-      "Content-Disposition": 'attachment; filename="199X-Kadayawan-POS.mobileconfig"',
+      "Content-Disposition": 'attachment; filename="199X-Coffee-Bar-POS.mobileconfig"',
       "Cache-Control": "no-store",
     },
   });

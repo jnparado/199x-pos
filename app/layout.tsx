@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist_Mono, Montserrat, Pacifico } from "next/font/google";
+import { Geist_Mono, Montserrat, Playfair_Display } from "next/font/google";
 import { Providers } from "@/components/club/providers";
 import "./globals.css";
 
@@ -9,10 +9,10 @@ const montserrat = Montserrat({
   weight: ["500", "600", "700", "800"],
 });
 
-const pacifico = Pacifico({
-  variable: "--font-pacifico",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
@@ -22,11 +22,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "199X Kadayawan POS",
-    template: "%s · 199X Kadayawan",
+    default: "199X Coffee+Bar POS",
+    template: "%s · 199X Coffee+Bar",
   },
   description:
-    "Bar point of sale for 199X Kadayawan. Download the Android and iPhone app, or run the register in your browser.",
+    "Coffee and bar point of sale for 199X Coffee+Bar. Download the Android and iPhone app, or run the register in your browser.",
   applicationName: "199X POS",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
@@ -54,7 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${pacifico.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${montserrat.variable} ${playfair.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-background text-foreground">
         <Providers>{children}</Providers>

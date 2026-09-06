@@ -107,9 +107,9 @@ function Card({
   accent: string;
 }) {
   return (
-    <div className={`rounded-2xl border border-white/8 border-l-4 bg-black/50 p-4 ${accent}`}>
-      <p className="text-xs font-bold uppercase tracking-wide text-zinc-500">{label}</p>
-      <p className="mt-2 text-xl font-bold text-white">{value}</p>
+    <div className={`rounded-2xl border border-white/8 border-l-4 bg-black/50 p-3 sm:p-4 ${accent}`}>
+      <p className="text-[10px] font-bold uppercase tracking-wide text-zinc-500 sm:text-xs">{label}</p>
+      <p className="mt-2 break-words text-lg font-bold text-white sm:text-xl">{value}</p>
     </div>
   );
 }

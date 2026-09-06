@@ -22,10 +22,10 @@ function PlayMark() {
 
 export function StoreButtons({ size = "lg" }: { size?: "lg" | "sm" }) {
   const { platform, installed, canPrompt, install } = useAppInstall();
-  const pad = size === "lg" ? "px-5 py-4" : "px-4 py-3";
+  const pad = size === "lg" ? "px-4 py-3.5 sm:px-5 sm:py-4" : "px-4 py-3";
 
   return (
-    <div className="flex flex-col gap-3 sm:flex-row">
+    <div className="flex w-full flex-col gap-3 sm:flex-row md:w-auto">
       <Link
         href="/download#android"
         onClick={async (event) => {
@@ -34,26 +34,26 @@ export function StoreButtons({ size = "lg" }: { size?: "lg" | "sm" }) {
             await install();
           }
         }}
-        className={`flex min-w-[220px] items-center gap-3 rounded-2xl bg-kada-green ${pad} font-bold text-black shadow-[0_0_30px_rgba(34,197,94,0.25)] hover:brightness-110`}
+        className={`flex w-full min-w-0 items-center justify-center gap-3 rounded-2xl bg-kada-green ${pad} font-bold text-black shadow-[0_0_30px_rgba(34,197,94,0.25)] hover:brightness-110 sm:min-w-[200px] md:w-auto`}
       >
         <PlayMark />
         <span className="text-left leading-tight">
           <span className="block text-[10px] font-extrabold uppercase tracking-[0.16em]">
             {installed && platform === "android" ? "Installed on" : "Download for"}
           </span>
-          <span className="text-lg">Android</span>
+          <span className="text-base sm:text-lg">Android</span>
         </span>
       </Link>
       <Link
         href="/download#ios"
-        className={`flex min-w-[220px] items-center gap-3 rounded-2xl bg-white ${pad} font-bold text-black hover:bg-zinc-100`}
+        className={`flex w-full min-w-0 items-center justify-center gap-3 rounded-2xl bg-white ${pad} font-bold text-black hover:bg-zinc-100 sm:min-w-[200px] md:w-auto`}
       >
         <AppleMark />
         <span className="text-left leading-tight">
           <span className="block text-[10px] font-extrabold uppercase tracking-[0.16em]">
             {installed && platform === "ios" ? "Installed on" : "Download for"}
           </span>
-          <span className="text-lg">iPhone</span>
+          <span className="text-base sm:text-lg">iPhone</span>
         </span>
       </Link>
     </div>
@@ -70,7 +70,7 @@ export function DownloadQr() {
     );
   }, []);
 
-  if (!src) return <div className="h-[220px] w-[220px] rounded-2xl bg-white/5" />;
+  if (!src) return <div className="h-40 w-40 rounded-2xl bg-white/5 sm:h-[220px] sm:w-[220px]" />;
 
   return (
     <img
@@ -78,7 +78,7 @@ export function DownloadQr() {
       alt="QR code to download the 199X POS app"
       width={220}
       height={220}
-      className="rounded-2xl border border-kada-green/40 bg-black p-2"
+      className="h-40 w-40 rounded-2xl border border-kada-green/40 bg-black p-2 sm:h-[220px] sm:w-[220px]"
     />
   );
 }

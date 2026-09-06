@@ -3,7 +3,7 @@ import type { ClubState } from "./types";
 export function seedState(): ClubState {
   return {
     venue: {
-      name: "199X Kadayawan",
+      name: "199X Coffee+Bar",
       city: "Davao City",
       taxRate: 0.12,
       serviceRate: 0.1,

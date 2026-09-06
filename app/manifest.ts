@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "199X Kadayawan POS",
+    name: "199X Coffee+Bar POS",
     short_name: "199X POS",
-    description: "Bar point of sale for 199X Kadayawan",
+    description: "Coffee and bar point of sale for 199X Coffee+Bar",
     start_url: "/login",
     scope: "/",
     display: "standalone",

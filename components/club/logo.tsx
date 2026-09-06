@@ -9,11 +9,11 @@ export function Logo({ size = "nav" }: LogoProps) {
     return (
       <Image
         src="/199x-logo.jpg"
-        alt="199X Kadayawan"
-        width={900}
-        height={600}
+        alt="199X Coffee+Bar"
+        width={640}
+        height={640}
         priority
-        className="mx-auto h-auto w-full max-w-xl object-contain drop-shadow-[0_0_40px_rgba(34,197,94,0.25)]"
+        className="mx-auto h-auto w-full max-w-[220px] rounded-[2rem] object-contain shadow-[0_0_50px_rgba(212,175,55,0.28)] sm:max-w-[280px] lg:max-w-[360px]"
       />
     );
   }
@@ -22,11 +22,11 @@ export function Logo({ size = "nav" }: LogoProps) {
     return (
       <Image
         src="/199x-logo.jpg"
-        alt="199X Kadayawan"
-        width={720}
+        alt="199X Coffee+Bar"
+        width={480}
         height={480}
         priority
-        className="mx-auto h-auto w-full max-w-sm object-contain"
+        className="mx-auto h-auto w-full max-w-[11rem] rounded-[1.6rem] object-contain sm:max-w-[14rem]"
       />
     );
   }
@@ -38,7 +38,7 @@ export function Logo({ size = "nav" }: LogoProps) {
         alt="199X"
         width={48}
         height={48}
-        className="h-10 w-10 rounded-lg object-cover"
+        className="h-9 w-9 rounded-xl object-cover sm:h-10 sm:w-10"
       />
     );
   }
@@ -46,10 +46,10 @@ export function Logo({ size = "nav" }: LogoProps) {
   return (
     <Image
       src="/199x-logo.jpg"
-      alt="199X Kadayawan"
+      alt="199X Coffee+Bar"
       width={220}
-      height={146}
-      className="h-auto w-full object-contain"
+      height={220}
+      className="mx-auto h-auto w-full max-w-[9.5rem] rounded-2xl object-contain"
     />
   );
 }

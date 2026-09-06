@@ -37,8 +37,11 @@ export function getState(): ClubState {
   if (!globalStore.__posClub) {
     globalStore.__posClub = load();
   }
-  if (globalStore.__posClub.venue.name === "POS Club") {
-    globalStore.__posClub.venue.name = "199X Kadayawan";
+  if (
+    globalStore.__posClub.venue.name === "POS Club" ||
+    globalStore.__posClub.venue.name === "199X Kadayawan"
+  ) {
+    globalStore.__posClub.venue.name = "199X Coffee+Bar";
   }
   return globalStore.__posClub;
 }

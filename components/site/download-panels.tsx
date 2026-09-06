@@ -10,12 +10,12 @@ export function DownloadPanels() {
     <div className="grid gap-6 lg:grid-cols-2">
       <section
         id="android"
-        className={`rounded-3xl border bg-black/60 p-6 ${
+        className={`scroll-mt-24 rounded-2xl border bg-black/60 p-4 sm:rounded-3xl sm:p-6 ${
           platform === "android" ? "border-kada-green shadow-[0_0_40px_rgba(34,197,94,0.15)]" : "border-white/10"
         }`}
       >
-        <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-kada-green">Android</p>
-        <h2 className="mt-2 text-3xl font-extrabold text-white">Download for Android</h2>
+        <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-kada-green sm:text-xs">Android</p>
+        <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">Download for Android</h2>
         <p className="mt-2 text-sm text-zinc-400">
           Install 199X POS on your phone or tablet. Works on Chrome and other Android browsers.
         </p>
@@ -41,12 +41,12 @@ export function DownloadPanels() {
 
       <section
         id="ios"
-        className={`rounded-3xl border bg-black/60 p-6 ${
+        className={`scroll-mt-24 rounded-2xl border bg-black/60 p-4 sm:rounded-3xl sm:p-6 ${
           platform === "ios" ? "border-kada-yellow shadow-[0_0_40px_rgba(245,197,24,0.15)]" : "border-white/10"
         }`}
       >
-        <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-kada-yellow">iPhone</p>
-        <h2 className="mt-2 text-3xl font-extrabold text-white">Download for iPhone</h2>
+        <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-kada-yellow sm:text-xs">iPhone</p>
+        <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">Download for iPhone</h2>
         <p className="mt-2 text-sm text-zinc-400">
           Add the 199X POS app to your Home Screen. Use Safari for the fastest install.
         </p>
@@ -67,9 +67,9 @@ export function DownloadPanels() {
         </ol>
       </section>
 
-      <section className="rounded-3xl border border-white/10 bg-black/60 p-6 lg:col-span-2">
+      <section className="hidden rounded-3xl border border-white/10 bg-black/60 p-6 md:block lg:col-span-2">
         <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
-          <div>
+          <div className="text-center md:text-left">
             <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-kada-blue">Scan to install</p>
             <h2 className="mt-2 text-2xl font-extrabold text-white">Open this page on your phone</h2>
             <p className="mt-2 max-w-xl text-sm text-zinc-400">

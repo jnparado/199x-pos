@@ -1,4 +1,4 @@
-const CACHE = "199x-pos-v1";
+const CACHE = "199x-pos-v2";
 const PRECACHE = [
   "/199x-logo.jpg",
   "/icon-192.png",
