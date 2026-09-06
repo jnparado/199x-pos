@@ -2,16 +2,19 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
+    "incremental": false,
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "constants/**/*.ts",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+  ],
+  "exclude": ["node_modules", "components"]
 }

@@ -75,7 +75,7 @@ export default function LoginScreen() {
           <Text style={{ color: colors.red, textAlign: "center", marginTop: 12 }}>{error || serverError}</Text>
         ) : null}
         <View style={{ marginTop: 18, flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-          {staffPins.map((item) => (
+          {staffPins.map((item: string) => (
             <Text key={item} style={{ color: colors.muted, width: "47%", fontSize: 12 }}>
               {item}
             </Text>

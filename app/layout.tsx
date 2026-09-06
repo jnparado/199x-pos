@@ -22,11 +22,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "199X Coffee+Bar POS",
+    default: "199X Coffee+Bar",
     template: "%s · 199X Coffee+Bar",
   },
   description:
-    "Coffee and bar point of sale for 199X Coffee+Bar. Download the Android and iPhone app, or run the register in your browser.",
+    "Coffee by day. Bar after dark. 199X Coffee+Bar in downtown Davao City. Book a table, see events, or plan a private night.",
   applicationName: "199X POS",
   manifest: "/manifest.webmanifest",
   appleWebApp: {

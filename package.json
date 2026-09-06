@@ -4,9 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:lan": "next dev --hostname 0.0.0.0",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "mobile": "npm run start --prefix mobile",
+    "mobile:ios": "npm run ios --prefix mobile",
+    "mobile:android": "npm run android --prefix mobile"
   },
   "dependencies": {
     "next": "16.3.2",

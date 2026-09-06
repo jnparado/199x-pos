@@ -11,7 +11,7 @@ export const colors = {
   orange: "#f59e0b",
 };
 
-export const staffPins = [
+export const staffPins: string[] = [
   "Aria · 0000",
   "Marco · 1111",
   "John · 2222",

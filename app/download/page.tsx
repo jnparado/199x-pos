@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Logo } from "@/components/club/logo";
-import { SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { DownloadPanels } from "@/components/site/download-panels";
+import { SitePage } from "@/components/site/ui";
 
 export const metadata: Metadata = {
   title: "Download 199X POS",
@@ -10,9 +10,8 @@ export const metadata: Metadata = {
 
 export default function DownloadPage() {
   return (
-    <div className="kada-pattern min-h-dvh bg-black text-white">
-      <SiteHeader />
-      <main className="mx-auto max-w-6xl px-4 py-8 sm:py-12">
+    <SitePage>
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:py-12">
         <div className="mx-auto max-w-xl text-center">
           <div className="mx-auto max-w-[16rem] sm:max-w-sm">
             <Logo size="login" />
@@ -29,8 +28,7 @@ export default function DownloadPage() {
         <div className="mt-8 sm:mt-10">
           <DownloadPanels />
         </div>
-      </main>
-      <SiteFooter />
-    </div>
+      </div>
+    </SitePage>
   );
 }

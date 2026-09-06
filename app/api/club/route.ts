@@ -18,6 +18,7 @@ import {
   voidItem,
   voidOrder,
 } from "@/lib/club/store";
+import { corsHeaders, withCors } from "@/lib/club/cors";
 import type { Discount, PayMethod } from "@/lib/club/types";
 
 type Action =
@@ -46,8 +47,16 @@ type Action =
   | { type: "stock"; ingredientId: string; qty: number; kind: "in" | "waste" | "adjust"; note: string }
   | { type: "reset" };
 
+export function OPTIONS() {
+  return new Response(null, { status: 204, headers: corsHeaders });
+}
+
+function json(data: unknown, status = 200) {
+  return withCors(Response.json(data, { status }));
+}
+
 export async function GET() {
-  return Response.json(getState());
+  return json(getState());
 }
 
 export async function POST(request: Request) {
@@ -55,79 +64,79 @@ export async function POST(request: Request) {
   try {
     switch (action.type) {
       case "login":
-        return Response.json({ user: login(action.pin), state: getState() });
+        return json({ user: login(action.pin), state: getState() });
       case "open":
-        return Response.json({
+        return json({
           order: openOrder(action),
           state: getState(),
         });
       case "add":
-        return Response.json({
+        return json({
           order: addItem(action.orderId, action.productId, action.note),
           state: getState(),
         });
       case "qty":
-        return Response.json({
+        return json({
           order: changeQty(action.orderId, action.lineId, action.delta),
           state: getState(),
         });
       case "void-item":
-        return Response.json({
+        return json({
           order: voidItem(action.orderId, action.lineId),
           state: getState(),
         });
       case "void-order":
-        return Response.json({
+        return json({
           order: voidOrder(action.orderId),
           state: getState(),
         });
       case "hold":
-        return Response.json({
+        return json({
           order: holdOrder(action.orderId),
           state: getState(),
         });
       case "send":
-        return Response.json({
+        return json({
           order: sendOrder(action.orderId),
           state: getState(),
         });
       case "ticket":
-        return Response.json({
+        return json({
           order: setTicket(action.orderId, action.ticketStatus),
           state: getState(),
         });
       case "discount":
-        return Response.json({
+        return json({
           order: applyDiscount(action.orderId, action.discount),
           state: getState(),
         });
       case "note":
-        return Response.json({
+        return json({
           order: setNote(action.orderId, action.lineId, action.note),
           state: getState(),
         });
       case "transfer":
-        return Response.json({
+        return json({
           order: transferOrder(action.orderId, action.tableId),
           state: getState(),
         });
       case "merge":
-        return Response.json({
+        return json({
           order: mergeOrders(action.fromId, action.intoId),
           state: getState(),
         });
       case "pay":
-        return Response.json({
+        return json({
           order: payOrder(action.orderId, action.method, action.amount),
           state: getState(),
         });
       case "reserve":
-        return Response.json({
+        return json({
           table: reserveTable(action.tableId),
           state: getState(),
         });
       case "stock":
-        return Response.json({
+        return json({
           ingredient: adjustIngredient(
             action.ingredientId,
             action.qty,
@@ -137,14 +146,14 @@ export async function POST(request: Request) {
           state: getState(),
         });
       case "reset":
-        return Response.json({ state: resetClub() });
+        return json({ state: resetClub() });
       default:
-        return Response.json({ error: "Unknown action" }, { status: 400 });
+        return json({ error: "Unknown action" }, 400);
     }
   } catch (error) {
-    return Response.json(
+    return json(
       { error: error instanceof Error ? error.message : "Action failed" },
-      { status: 400 },
+      400,
     );
   }
 }
