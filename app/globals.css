@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #f7f4ee;
+  --kada-green: #22c55e;
+  --kada-blue: #2563eb;
+  --kada-red: #ef4444;
+  --kada-yellow: #f5c518;
+  --kada-orange: #f59e0b;
+  --panel: #0a0a0a;
+  --panel-2: #111111;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-kada-green: var(--kada-green);
+  --color-kada-blue: var(--kada-blue);
+  --color-kada-red: var(--kada-red);
+  --color-kada-yellow: var(--kada-yellow);
+  --color-kada-orange: var(--kada-orange);
+  --font-sans: var(--font-montserrat);
+  --font-script: var(--font-pacifico);
+  --font-mono: var(--font-geist-mono);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(34, 197, 94, 0.12), transparent 34%),
+    radial-gradient(circle at 88% 8%, rgba(37, 99, 235, 0.12), transparent 32%),
+    radial-gradient(circle at 78% 92%, rgba(239, 68, 68, 0.1), transparent 36%),
+    radial-gradient(circle at 18% 88%, rgba(245, 197, 24, 0.1), transparent 30%),
+    #000;
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.kada-pattern {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    repeating-linear-gradient(
+      135deg,
+      transparent 0 10px,
+      rgba(34, 197, 94, 0.05) 10px 11px
+    );
+  background-size:
+    28px 28px,
+    28px 28px,
+    auto;
+}
+
+.font-script {
+  font-family: var(--font-script), cursive;
+}
