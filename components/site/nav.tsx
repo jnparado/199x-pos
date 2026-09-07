@@ -6,9 +6,11 @@ import { useState } from "react";
 
 const LINKS = [
   { href: "/", label: "Home" },
+  { href: "/menu", label: "Menu" },
   { href: "/events", label: "Events" },
   { href: "/services", label: "Services" },
-  { href: "/booking", label: "Booking" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 function linkClass(active: boolean, mobile = false) {
@@ -26,7 +28,7 @@ export function SiteNav() {
 
   return (
     <>
-      <nav className="hidden items-center gap-1 text-sm font-semibold lg:flex">
+      <nav className="hidden items-center gap-1 text-sm font-semibold xl:flex">
         {LINKS.map((link) => (
           <Link key={link.href} href={link.href} className={linkClass(pathname === link.href)}>
             {link.label}
@@ -43,7 +45,7 @@ export function SiteNav() {
         </Link>
       </nav>
 
-      <div className="flex items-center gap-1.5 lg:hidden">
+      <div className="flex items-center gap-1.5 xl:hidden">
         <Link
           href="/booking"
           className="rounded-full bg-kada-yellow px-3 py-2 text-xs font-extrabold text-black"
@@ -62,7 +64,7 @@ export function SiteNav() {
       </div>
 
       {open ? (
-        <div className="absolute inset-x-0 top-full border-b border-white/10 bg-black/95 p-3 lg:hidden">
+        <div className="absolute inset-x-0 top-full border-b border-white/10 bg-black/95 p-3 xl:hidden">
           <div className="grid gap-2">
             {LINKS.map((link) => (
               <Link

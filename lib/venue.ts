@@ -58,6 +58,67 @@ export const services = [
   },
 ];
 
+export const menu = [
+  {
+    id: "coffee",
+    name: "Coffee",
+    color: "text-kada-green",
+    items: [
+      { name: "Espresso", price: 90, note: "Double shot" },
+      { name: "Americano", price: 110 },
+      { name: "Latte", price: 140 },
+      { name: "Cappuccino", price: 140 },
+      { name: "Cold brew", price: 150 },
+      { name: "Mindanao pour-over", price: 180, note: "Single origin" },
+    ],
+  },
+  {
+    id: "cocktails",
+    name: "Cocktails",
+    color: "text-kada-red",
+    items: [
+      { name: "Mojito", price: 250, note: "Happy hour ₱200" },
+      { name: "Margarita", price: 280, note: "Happy hour ₱220" },
+      { name: "Long Island", price: 320 },
+      { name: "Martini", price: 260 },
+      { name: "Espresso martini", price: 280 },
+    ],
+  },
+  {
+    id: "beer",
+    name: "Beer",
+    color: "text-kada-blue",
+    items: [
+      { name: "San Miguel Pale Pilsen", price: 120, note: "Happy hour ₱90" },
+      { name: "San Miguel Light", price: 120, note: "Happy hour ₱90" },
+      { name: "Red Horse", price: 100, note: "Happy hour ₱80" },
+      { name: "Corona", price: 140 },
+    ],
+  },
+  {
+    id: "spirits",
+    name: "Whiskey & wine",
+    color: "text-kada-yellow",
+    items: [
+      { name: "Jack Daniel's", price: 300 },
+      { name: "Johnnie Walker Black", price: 350 },
+      { name: "Jameson", price: 280 },
+      { name: "House white", price: 220 },
+      { name: "House red", price: 220 },
+    ],
+  },
+  {
+    id: "food",
+    name: "Kitchen",
+    color: "text-kada-orange",
+    items: [
+      { name: "Fries", price: 150 },
+      { name: "Wings", price: 280 },
+      { name: "Club burger", price: 320 },
+    ],
+  },
+];
+
 export const events = [
   {
     id: "gold-hour",

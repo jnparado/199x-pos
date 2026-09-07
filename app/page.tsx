@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Logo } from "@/components/club/logo";
 import { GoldRule, SitePage } from "@/components/site/ui";
-import { events, services, venue } from "@/lib/venue";
+import { events, menu, services, venue } from "@/lib/venue";
 
 export const metadata: Metadata = {
   title: "199X Coffee+Bar",
@@ -21,7 +21,7 @@ export default function HomePage() {
             199X
           </h1>
           <p className="font-script mt-2 text-4xl text-kada-yellow sm:text-5xl">Coffee+Bar</p>
-          <GoldRule label="APP" />
+          <GoldRule label="Davao" />
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-zinc-300 sm:text-lg lg:mx-0">
             A black room, a gold rim, and a floor that moves from espresso to last call. Come for coffee. Stay for the night.
           </p>
@@ -33,10 +33,10 @@ export default function HomePage() {
               Book a table
             </Link>
             <Link
-              href="/events"
+              href="/menu"
               className="inline-flex h-12 items-center justify-center rounded-2xl border border-white/15 px-6 text-sm font-extrabold text-white hover:bg-white/5"
             >
-              See events
+              View menu
             </Link>
           </div>
         </div>
@@ -86,6 +86,36 @@ export default function HomePage() {
             </article>
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-14">
+        <div className="flex items-end justify-between gap-4">
+          <div>
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-kada-green">Menu</p>
+            <h2 className="mt-2 text-3xl font-extrabold">Coffee, pours, and plates</h2>
+          </div>
+          <Link href="/menu" className="hidden text-sm font-semibold text-kada-yellow sm:inline">
+            Full menu
+          </Link>
+        </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          {menu.slice(0, 3).map((group) => (
+            <article key={group.id} className="rounded-3xl border border-white/10 bg-black/55 p-5">
+              <h3 className={`text-lg font-extrabold ${group.color}`}>{group.name}</h3>
+              <ul className="mt-4 space-y-2 text-sm">
+                {group.items.slice(0, 4).map((item) => (
+                  <li key={item.name} className="flex justify-between gap-3 text-zinc-300">
+                    <span>{item.name}</span>
+                    <span className="text-kada-yellow">₱{item.price}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+        <Link href="/menu" className="mt-6 block text-center text-sm font-semibold text-kada-yellow sm:hidden">
+          Full menu
+        </Link>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-14">

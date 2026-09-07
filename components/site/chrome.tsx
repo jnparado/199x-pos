@@ -39,17 +39,23 @@ export function SiteFooter() {
           <p>hello@199x.bar</p>
         </div>
         <div className="flex flex-col gap-2 text-sm font-semibold">
+          <Link href="/menu" className="text-zinc-300 hover:text-kada-yellow">
+            Menu
+          </Link>
           <Link href="/events" className="text-zinc-300 hover:text-kada-yellow">
             Events
           </Link>
           <Link href="/services" className="text-zinc-300 hover:text-kada-yellow">
             Services
           </Link>
+          <Link href="/about" className="text-zinc-300 hover:text-kada-yellow">
+            About
+          </Link>
+          <Link href="/contact" className="text-zinc-300 hover:text-kada-yellow">
+            Contact
+          </Link>
           <Link href="/booking" className="text-zinc-300 hover:text-kada-yellow">
             Book a table
-          </Link>
-          <Link href="/download" className="text-zinc-500 hover:text-kada-green">
-            Staff app
           </Link>
         </div>
       </div>
